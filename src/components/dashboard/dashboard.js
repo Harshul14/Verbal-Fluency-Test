@@ -273,10 +273,8 @@
 
 
 import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { DashboardWrapper } from "./dashboard.styled";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import useClipboard from "react-use-clipboard";
+// import useClipboard from "react-use-clipboard";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import Webcam from "react-webcam";
@@ -284,15 +282,15 @@ import Navbar from "../Navbar/Navbar";
 import "./dashboard.css";
 import { useNavigate } from 'react-router-dom';
 import rectangleTop from '../../Assets/Rectangle-1.png';
-import rectangleBottom from '../../Assets/Rectangle-2.png';
+// import rectangleBottom from '../../Assets/Rectangle-2.png';
 import layer from '../../Assets/Layer-1.png';
 
 const Dashboard = () => {
     const [textToCopy, setTextToCopy] = useState();
-    const [isCopied, setCopied] = useClipboard(textToCopy, {
-        successDuration: 1000,
-    });
-    const [recording, setRecording] = useState(false);
+    // const [isCopied, setCopied] = useClipboard(textToCopy, {
+    //     successDuration: 1000,
+    // });
+    // const [recording, setRecording] = useState(false);
     const [videoStarted, setVideoStarted] = useState(false);
     const [model, setModel] = useState(null);
     const [cameraEnabled, setCameraEnabled] = useState(false);
@@ -309,7 +307,7 @@ const Dashboard = () => {
         setCameraEnabled(true);
         const timeoutId = setTimeout(() => {
             handleStopCaptureClick();
-        }, 20000);
+        }, 30000);
         setListeningTimeout(timeoutId);
         const timeoutIdCam = setTimeout(() => {
             handleStartCaptureClick();
@@ -369,12 +367,12 @@ const Dashboard = () => {
         if (mediaRecorderRef.current) {
             mediaRecorderRef.current.stop();
             setCapturing(false);
-            console.log("before")
             handleDownload();
-            // console.log("after")
+            console.log('before')
+            console.log('after')
         }
     }, [mediaRecorderRef, setCapturing]);
-    let url = "https://f00f-34-86-69-44.ngrok-free.app"  // yeh change krna pdega
+    let url = "https://be6d-35-238-95-38.ngrok-free.app"  // yeh change krna pdega
     const handleRegenerateClick = async (blob) => {
         try {
             const formData = new FormData();
@@ -389,7 +387,7 @@ const Dashboard = () => {
                 const responseData = await response.json();
                 sessionStorage.setItem("stress", responseData.stress);
                 sessionStorage.setItem("percent", responseData.percent);
-                // sessionStorage.setItem("stress", responseData.message);
+                sessionStorage.setItem("pdf", responseData.pdf);
                 console.log(responseData);
                 navigate('/output');
             } else {
@@ -399,9 +397,7 @@ const Dashboard = () => {
             console.error('Error uploading video:', error);
         }
     };
-
     const handleDownload = React.useCallback(() => {
-        console.log("handledownload")
         if (recordedChunks) {
             const blob = new Blob(recordedChunks, {
                 type: "video/mp4"

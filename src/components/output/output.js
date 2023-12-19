@@ -8,31 +8,28 @@ import Footer from '../footer/footer';
 
 function Output() {
    const containerStyle = {
-      // padding: '60px 0',
       textAlign: 'center',
-      // marginBottom: '60px',
       marginTop: '-60px'
    };
 
-   // const [akshat, setAkshat] = useState(null); // State to store the retrieved data
-
-   // useEffect(() => {
-   //    const storedData = sessionStorage.getItem("akshat");
-   //    if (storedData) {
-   //       const parsedData = JSON.parse(storedData);
-   //       setAkshat(parsedData);
-   //    }
-   // }, []); // Empty dependency array to run this effect only once on mount
-
    const [stress, setStress] = useState(null);
    const [percent, setPercent] = useState(null);
+   const [pdf, setPdf] = useState(null);
 
    useEffect(() => {
       const storedStressData = sessionStorage.getItem("stress");
       const storedPercentData = sessionStorage.getItem("percent");
+      const storedPdfData = sessionStorage.getItem("pdf");
       setStress(storedStressData)
       setPercent(storedPercentData)
+      setPdf(storedPdfData)
    }, []);
+
+   const openStoredPDF = () => {
+      if (pdf) {
+         window.open(pdf, 'Details');
+      }
+   };
 
 
    const contentStyle = {
@@ -86,7 +83,10 @@ function Output() {
                <h2 style={headingStyle}>Thanks Mate!</h2>
                <h2 style={headingStyle}>Your work brings valuable outcomes</h2>
                <p style={paragraphStyle}>
-                  {percent && (<p> {percent}</p>)}
+                  Percentage of Movement Detected : {percent && (<>{percent}</>)}
+               </p>
+               <p style={paragraphStyle}>
+                  <button onClick={openStoredPDF}>Open PDF</button>
                   1. Number of Correct Words to a Class :
                </p>
                <p style={paragraphStyle}>
