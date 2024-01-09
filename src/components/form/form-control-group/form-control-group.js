@@ -74,7 +74,7 @@ const FormControlGroup = () => {
             <div style={contentStyle} className='control-group-content'>
                <h2 style={headingStyle}>Eligibility Criteria for Control Group</h2>
                <div style={{ marginBottom: '20px', marginTop: '20px' }}>
-               <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>1. Age &gt; 40:</p>
+                  <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>1. Age &gt; 40:</p>
                   <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
                      <input type="radio" name="ageOver40" value="Yes" checked={criteria.ageOver40 === 'Yes'} onChange={() => handleSelection('ageOver40', 'Yes')} />
                      Yes
