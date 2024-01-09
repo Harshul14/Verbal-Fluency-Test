@@ -1,7 +1,5 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-import vector from '../../Assets/Vector.svg';
 import logo from '../../Assets/Logo.svg';
 
 const Navbar = () => {
@@ -84,4 +82,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import rectangleTop from '../../Assets/Rectangle-1.png';
-// import rectangleBottom from '../../Assets/Rectangle-2.png';
 import layer from '../../Assets/Layer-1.png';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../footer/footer';
-// import { response } from 'express';
 
 function Output() {
    const containerStyle = {
@@ -15,7 +13,6 @@ function Output() {
    const [stress, setStress] = useState(null);
    const [percent, setPercent] = useState(null);
    const [pdf, setPdf] = useState(null);
-
    useEffect(() => {
       const storedStressData = sessionStorage.getItem("stress");
       const storedPercentData = sessionStorage.getItem("percent");
@@ -30,8 +27,6 @@ function Output() {
          window.open(pdf, 'Details');
       }
    };
-
-
    const contentStyle = {
       maxWidth: '800px',
       margin: '0 auto',

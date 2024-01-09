@@ -58,16 +58,6 @@ function About() {
         }}>
           <img src={rectangleTop} alt="rectangleTop" />
         </div>
-        {/* <div className="rectangle" style={{
-          height: '539px',
-          left: '0',
-          position: 'fixed',
-          bottom: '0',
-          width: '1728px',
-          zIndex: 1,
-        }}>
-          <img src={rectangleBottom} alt="rectangleBottom" />
-        </div> */}
         <div style={contentStyle} className='about-us-content'>
           <h2 style={headingStyle}>About Us</h2>
           <p style={paragraphStyle}>

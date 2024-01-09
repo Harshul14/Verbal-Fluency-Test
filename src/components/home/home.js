@@ -1,57 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import layer from '../../Assets/Layer-2.png';
-// import rectangle from '../../Assets/Rectangle-2.png';
-// import { FiArrowRight } from 'react-icons/fi';
-// import Navbar from '../Navbar/Navbar';
-
-// function Home() {
-//   return (
-//     <div className="home-container">
-//       <div
-//         className="home-banner-container"
-//         style={{
-//           backgroundImage: `url(${layer})`,
-//           backgroundSize: 'cover',
-//           backgroundRepeat: 'no-repeat',
-//           backgroundPosition: 'center center',
-//           height: '100vh', // Make the container full viewport height
-//         }}
-//       >
-//         <Navbar />
-//         <div className="home-bannerImage-container">
-//           {/* <img src={layer} alt="" /> */}
-//         </div>
-//         <div className="rectangle" style={{
-//           height: '539px',
-//           left: '0',
-//           position: 'fixed',
-//           bottom: '0',
-//           width: '1728px',
-//           // zIndex: -1, // Set a lower z-index to place it behind the Navbar
-//         }}>
-//           <img src={rectangle} alt="rectangle" />
-//         </div>
-
-//         <div className="home-text-section">
-//           <h1 className="primary-heading">
-//             Verbal Fluency Test
-//           </h1>
-//           <p className="primary-text">
-//             {/* sub text yha likh */}
-//           </p>
-//           <button className="secondary-button">
-//             Try Now <FiArrowRight />{" "}
-//           </button>
-//         </div>
-//         <div className="home-image-section">
-//           {/* <img src={layer} alt="" /> yha pr landing image lgana hai */}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-// export default Home;
 import React, { useState, useEffect } from 'react';
 import layer from '../../Assets/Layer-2.png';
 import Asset from '../../Assets/Asset-1.jpg';
@@ -61,7 +7,6 @@ import { FiArrowRight } from 'react-icons/fi';
 import Navbar from '../Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
-import Form from '../form/form';
 
 function Home() {
   const navigate = useNavigate();

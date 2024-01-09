@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/home';
 import About from './components/about/about';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/footer/footer';
 import Dashboard from './components/dashboard/dashboard';
 import Output from './components/output/output';
 import Form from './components/form/form';
@@ -20,22 +18,6 @@ function App() {
       .then((response) => response.json())
       .then((responseData) => setData(responseData));
   }, []);
-
-  //   return (
-  //     <div className="App">
-  //       <Home/>
-  //       <Router>
-  //         <Routes>
-  //           <Route exact path="/" element={<Home/>} />
-  //           <Route path="/about" element={<About/>} />
-  //         </Routes>
-  //       </Router>
-  //       <About/>
-  //       <Footer/>
-  //       <Dashboard/>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="App">
@@ -54,5 +36,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
