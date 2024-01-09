@@ -59,25 +59,18 @@ import rectangleBottom from '../../Assets/Rectangle-2.png';
 import rectangleTop from '../../Assets/Rectangle-1.png';
 import { FiArrowRight } from 'react-icons/fi';
 import Navbar from '../Navbar/Navbar';
-// import dummyVid from '../../Assets/dummy.mp4';
-// import zIndex from '@mui/material/styles/zIndex';
-// import About from '../about/about';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
+import Form from '../form/form';
 
 function Home() {
-  // const navigate = useNavigate(); // Initialize useHistory
-  // // Function to handle the button click and navigate to the Dashboard page
-  // const handleTryNowClick = () => {
-  //   navigate('/dashboard'); // Navigate to the "/dashboard" route
-  // };
   const navigate = useNavigate();
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   const handleTryNowClick = () => {
     setShouldAnimate(true);
     setTimeout(() => {
-      navigate('/dashboard');
+      navigate('/form');
     }, 300);
   };
 
@@ -91,7 +84,6 @@ function Home() {
   }, [shouldAnimate]);
   return (
     <div className={`home-container ${shouldAnimate ? 'fade-in active' : ''}`} id='home'>
-      {/* <div className="home-container" id='home'> */}
       <div
         className="home-banner-container"
         style={{
@@ -116,7 +108,6 @@ function Home() {
         </div>
 
         <div className="home-bannerImage-container">
-          {/* <img src={layer} alt="" /> */}
         </div>
         <div className="rectangle" style={{
           height: '539px',

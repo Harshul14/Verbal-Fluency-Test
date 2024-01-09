@@ -72,7 +72,7 @@ const Navbar = () => {
                 transition: 'color 0.3s',
                 cursor: 'pointer',
               }}>
-                <Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to="/form" style={{ textDecoration: 'none', color: 'inherit' }}>
                   Dashboard
                 </Link>
               </div>

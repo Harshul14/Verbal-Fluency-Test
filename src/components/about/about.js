@@ -1,15 +1,12 @@
 import React from 'react';
 import rectangleTop from '../../Assets/Rectangle-1.png';
-// import rectangleBottom from '../../Assets/Rectangle-2.png';
 import layer from '../../Assets/Layer-1.png';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../footer/footer';
 
 function About() {
   const containerStyle = {
-    // padding: '60px 0',
     textAlign: 'center',
-    // marginBottom: '60px',
     marginTop: '-60px'
   };
 
