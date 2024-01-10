@@ -3,9 +3,24 @@ import rectangleTop from '../../../Assets/Rectangle-1.png';
 import layer from '../../../Assets/Layer-1.png';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../footer/footer';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
 import { useNavigate } from 'react-router-dom';
 
 const FormExperimantalGroup = () => {
+   const firebaseConfig = {
+      apiKey: "AIzaSyCikYavkES5eO7qWi25zMoNF-iDWwN7YVE",
+      authDomain: "verbal-fluency-test-dummy.firebaseapp.com",
+      databaseURL: "https://verbal-fluency-test-dummy-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "verbal-fluency-test-dummy",
+      storageBucket: "verbal-fluency-test-dummy.appspot.com",
+      messagingSenderId: "96031832392",
+      appId: "1:96031832392:web:eebe6c17526709b7991b7d",
+      measurementId: "G-HQERQT8GXH"
+   };
+   if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+   }
    const navigate = useNavigate();
    const containerStyle = {
       textAlign: 'center',
@@ -32,6 +47,14 @@ const FormExperimantalGroup = () => {
       textAlign: 'center',
    };
    const handleExperimentalGroupSelection = () => {
+      const database = firebase.database().ref('experimentalGroupCriteria');
+      database.push(criteria)
+         .then(() => {
+            console.log('Data has been submitted to Firebase');
+         })
+         .catch((error) => {
+            console.error('Error submitting data to Firebase: ', error);
+         });
       navigate('/dashboard');
    };
    const [criteria, setCriteria] = useState({
