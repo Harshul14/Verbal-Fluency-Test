@@ -28,7 +28,7 @@ const FormControlGroup = () => {
    };
 
    const contentStyle = {
-      maxWidth: '800px',
+      maxWidth: '850px',
       margin: '0 auto',
       padding: '20px',
       backgroundColor: '#FFFACD',
@@ -60,6 +60,7 @@ const FormControlGroup = () => {
 const [criteria, setCriteria] = useState({
    ageOver40: null,
    noCognitiveImpairments: null,
+   noCognitiveImpairmentsSuspicion: null,
    canSpeakAndHear: null,
 });
 
@@ -95,7 +96,7 @@ return (
             <img src={rectangleTop} alt="rectangleTop" />
          </div>
          <div style={contentStyle} className='control-group-content'>
-            <h2 style={headingStyle}>Eligibility Criteria for Control Group</h2>
+            <h2 style={headingStyle}>Fill the Form with Relevant Choices</h2>
             <div style={{ marginBottom: '20px', marginTop: '20px' }}>
                <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>1. Age &gt; 40:</p>
                <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
@@ -108,7 +109,7 @@ return (
                </label>
             </div>
             <div style={{ marginBottom: '20px' }}>
-               <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>2. No history of any form of cognitive impairments including memory loss: </p>
+               <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>2. History of any form of cognitive impairments including memory loss: </p>
                <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
                   <input type="radio" name="noCognitiveImpairments" value="Yes" checked={criteria.noCognitiveImpairments === 'Yes'} onChange={() => handleSelection('noCognitiveImpairments', 'Yes')} />
                   Yes
@@ -119,7 +120,18 @@ return (
                </label>
             </div>
             <div style={{ marginBottom: '20px' }}>
-               <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>3. Can speak and hear without any particular problems:</p>
+                  <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>3. Suspicion of some form of cognitive impairments including memory loss: </p>
+                  <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
+                     <input type="radio" name="noCognitiveImpairmentsSuspicion" value="Yes" checked={criteria.noCognitiveImpairmentsSuspicion === 'Yes'} onChange={() => handleSelection('noCognitiveImpairmentsSuspicion', 'Yes')} />
+                     Yes
+                  </label>
+                  <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
+                     <input type="radio" name="noCognitiveImpairmentsSuspicion" value="No" checked={criteria.noCognitiveImpairmentsSuspicion === 'No'} onChange={() => handleSelection('noCognitiveImpairmentsSuspicion', 'No')} />
+                     No
+                  </label>
+               </div>
+            <div style={{ marginBottom: '20px' }}>
+               <p style={{ display: 'inline', color: '#333', textAlign: 'justify' }}>4. Can speak and hear without any particular problems:</p>
                <label style={{ display: 'inline', marginLeft: '10px', color: '#333', textAlign: 'justify' }}>
                   <input type="radio" name="canSpeakAndHear" value="Yes" checked={criteria.canSpeakAndHear === 'Yes'} onChange={() => handleSelection('canSpeakAndHear', 'Yes')} />
                   Yes

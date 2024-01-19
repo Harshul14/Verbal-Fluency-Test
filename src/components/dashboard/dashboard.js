@@ -79,7 +79,7 @@ const Dashboard = () => {
             console.log('after')
         }
     }, [mediaRecorderRef, setCapturing]);
-    let url = " https://3501-34-173-90-80.ngrok-free.app"  // yeh change krna pdega
+    let url = "https://1384-34-135-86-87.ngrok-free.app"  // yeh change krna pdega
     // console.log('link added')
     const handleRegenerateClick = async (blob) => {
         try {

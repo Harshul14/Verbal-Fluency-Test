@@ -15,7 +15,7 @@ function Home() {
   const handleTryNowClick = () => {
     setShouldAnimate(true);
     setTimeout(() => {
-      navigate('/form');
+      navigate('/control-group');
     }, 300);
   };
 

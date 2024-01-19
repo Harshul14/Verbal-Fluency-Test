@@ -70,7 +70,7 @@ const Navbar = () => {
                 transition: 'color 0.3s',
                 cursor: 'pointer',
               }}>
-                <Link to="/form" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to="/control-group" style={{ textDecoration: 'none', color: 'inherit' }}>
                   Dashboard
                 </Link>
               </div>
